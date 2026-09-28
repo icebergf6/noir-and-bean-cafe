@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Sparkles, X, Coffee, ArrowRight, Check, Heart, Flame } from 'lucide-react';
+import { Sparkles, X, ArrowRight } from 'lucide-react';
 import { PRODUCTS, formatPrice } from '@/data/products';
 import { Product } from '@/types/product';
 import { useCart } from '@/context/CartContext';
@@ -13,11 +13,10 @@ interface CoffeeRitualQuizProps {
 }
 
 export default function CoffeeRitualQuiz({ isOpen, onClose }: CoffeeRitualQuizProps) {
-  const { addToCart, setActiveProductModal } = useCart();
+  const { addToCart } = useCart();
 
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [selectedMood, setSelectedMood] = useState<string>('focus');
-  const [selectedStyle, setSelectedStyle] = useState<string>('milk');
   const [matchedProduct, setMatchedProduct] = useState<Product | null>(null);
 
   if (!isOpen) return null;
@@ -126,7 +125,6 @@ export default function CoffeeRitualQuiz({ isOpen, onClose }: CoffeeRitualQuizPr
                 <button
                   key={opt.id}
                   onClick={() => {
-                    setSelectedStyle(opt.id);
                     handleCalculateMatch(selectedMood, opt.id);
                   }}
                   className="w-full p-4 rounded-xl border border-[#E5DDD0] bg-white hover:border-[#1A1412] hover:bg-[#F2EDE4] text-left transition-all flex items-center justify-between group"

@@ -21,10 +21,8 @@ import {
   Plus,
   Minus,
   Trash2,
-  AlertCircle,
   Tag,
   Sparkles,
-  Flame,
   ChefHat
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
@@ -95,15 +93,18 @@ export default function OrderPage() {
       const params = new URLSearchParams(window.location.search);
       const voucher = params.get('voucher');
       if (voucher) {
-        setCouponInput(voucher);
-        const cleanCode = voucher.trim().toUpperCase();
-        const giftVal = Math.min(subtotal || 100000, 100000);
-        setAppliedDiscount({
-          code: cleanCode,
-          label: 'Digital E-Gift Card Privilege',
-          amount: giftVal
-        });
-        setCouponSuccess(`E-Gift Card Applied! Rp ${formatPrice(giftVal)} deducted from your order.`);
+        const timer = setTimeout(() => {
+          setCouponInput(voucher);
+          const cleanCode = voucher.trim().toUpperCase();
+          const giftVal = Math.min(subtotal || 100000, 100000);
+          setAppliedDiscount({
+            code: cleanCode,
+            label: 'Digital E-Gift Card Privilege',
+            amount: giftVal
+          });
+          setCouponSuccess(`E-Gift Card Applied! Rp ${formatPrice(giftVal)} deducted from your order.`);
+        }, 0);
+        return () => clearTimeout(timer);
       }
     }
   }, [subtotal]);

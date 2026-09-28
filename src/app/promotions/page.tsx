@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Tag, Clock, Check, Copy, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Clock, Check, Copy, ArrowRight } from 'lucide-react';
 
 interface PromoOffer {
   id: string;

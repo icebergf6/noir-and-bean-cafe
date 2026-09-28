@@ -8,7 +8,7 @@ import { useCart } from '@/context/CartContext';
 
 export default function MobileBottomNav() {
   const pathname = usePathname();
-  const { totalItems, setIsCartOpen } = useCart();
+  const { totalItems } = useCart();
 
   const navItems = [
     { label: 'HOME', href: '/', icon: Home },

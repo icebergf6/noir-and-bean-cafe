@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Volume2, VolumeX, Moon, Sun, Sparkles } from 'lucide-react';
+import { Volume2, VolumeX, Moon, Sun } from 'lucide-react';
 
 export default function AtmospherePlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -12,6 +12,15 @@ export default function AtmospherePlayer() {
   const gainNodeRef = useRef<GainNode | null>(null);
   const osc1Ref = useRef<OscillatorNode | null>(null);
   const osc2Ref = useRef<OscillatorNode | null>(null);
+
+  // Safe cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (audioCtxRef.current && audioCtxRef.current.state !== 'closed') {
+        audioCtxRef.current.close().catch(() => {});
+      }
+    };
+  }, []);
 
   const toggleSound = () => {
     if (isPlaying) {

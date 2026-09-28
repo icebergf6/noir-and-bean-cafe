@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Menu as MenuIcon, X, Coffee, Calendar, Sparkles } from 'lucide-react';
+import { ShoppingBag, Menu as MenuIcon, X, Coffee, Calendar } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import AtmospherePlayer from '@/components/layout/AtmospherePlayer';
 

@@ -6,14 +6,9 @@ import Link from 'next/link';
 import {
   Coffee,
   CheckCircle2,
-  Calendar,
-  Truck,
   Sparkles,
   ArrowRight,
-  ShieldCheck,
-  Package,
-  Heart,
-  RotateCcw
+  Package
 } from 'lucide-react';
 import { formatPrice } from '@/data/products';
 

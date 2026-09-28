@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Gift, Check, Sparkles, Send, Copy, ArrowRight, ShieldCheck, Heart, Coffee, CreditCard, Share2 } from 'lucide-react';
+import { Gift, Check, Sparkles, Copy, ArrowRight, ShieldCheck, Coffee, CreditCard, Share2 } from 'lucide-react';
 
 interface CardDesign {
   id: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, CheckCircle, ThumbsUp } from 'lucide-react';
+import { Star, CheckCircle } from 'lucide-react';
 
 interface Review {
   id: string;

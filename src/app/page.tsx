@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Star, Clock, MapPin, Coffee, Sparkles, ShieldCheck, Heart } from 'lucide-react';
+import { ArrowRight, Star, Clock, MapPin, Coffee, Sparkles, Heart } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
 import ProductCard from '@/components/menu/ProductCard';
 

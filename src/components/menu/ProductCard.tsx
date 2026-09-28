@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Plus, Check, Sparkles } from 'lucide-react';
+import { Plus, Sparkles } from 'lucide-react';
 import { Product } from '@/types/product';
 import { formatPrice } from '@/data/products';
 import { useCart } from '@/context/CartContext';

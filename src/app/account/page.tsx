@@ -1,21 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
-  Award,
   Coffee,
   Gift,
   QrCode,
   Sparkles,
-  Clock,
-  ArrowRight,
-  CheckCircle2,
-  ChevronRight,
-  ShieldCheck,
-  Star
+  CheckCircle2
 } from 'lucide-react';
-import { formatPrice } from '@/data/products';
 
 interface RewardItem {
   id: string;

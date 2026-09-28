@@ -16,7 +16,7 @@ export default function StickyOrderBar() {
   }
 
   return (
-    <div className="fixed bottom-14 md:bottom-6 left-0 right-0 z-30 px-4 pointer-events-none transition-all duration-300">
+    <div className="fixed bottom-16 md:bottom-6 left-0 right-0 z-30 px-4 pointer-events-none transition-all duration-300">
       <div className="max-w-md mx-auto pointer-events-auto">
         <button
           onClick={() => setIsCartOpen(true)}

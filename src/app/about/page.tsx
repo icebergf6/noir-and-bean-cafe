@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Compass, Heart, ShieldCheck, Leaf, Award, Users } from 'lucide-react';
+import { ArrowRight, Compass, Leaf, Award, Users } from 'lucide-react';
 
 export default function AboutPage() {
   return (

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { X, Heart, MessageCircle, Camera, Share2 } from 'lucide-react';
+import { X, Heart, MessageCircle, Camera } from 'lucide-react';
 
 export type GalleryCategory = 'ALL' | 'COFFEE' | 'FOOD' | 'SPACE' | 'PEOPLE' | 'EVENTS';
 

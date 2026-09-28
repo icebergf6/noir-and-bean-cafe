@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       whatsappNotification: whatsappPayload,
       message: 'Payment settled instantly and WhatsApp dispatch queued.'
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { success: false, error: 'Simulation dispatch error' },
       { status: 500 }

@@ -33,15 +33,18 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Restore cart from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem('noir_bean_cart');
-      if (saved) {
-        setCart(JSON.parse(saved));
+    const timer = setTimeout(() => {
+      try {
+        const saved = localStorage.getItem('noir_bean_cart');
+        if (saved) {
+          setCart(JSON.parse(saved));
+        }
+      } catch {
+        // Local storage disabled or error
       }
-    } catch {
-      // Local storage disabled or error
-    }
-    setIsHydrated(true);
+      setIsHydrated(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Save cart to localStorage on changes

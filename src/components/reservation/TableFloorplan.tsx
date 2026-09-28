@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SeatingArea } from '@/types/reservation';
-import { Sparkles, Sun, Wifi, Armchair, Check } from 'lucide-react';
+import { Sun, Wifi, Armchair, Check } from 'lucide-react';
 
 export interface FloorplanTable {
   id: string;

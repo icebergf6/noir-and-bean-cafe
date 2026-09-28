@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Coffee, Sparkles, Heart, Wifi, Volume2, Sun, Moon } from 'lucide-react';
+import { ArrowRight, Wifi, Volume2, Sun, Moon } from 'lucide-react';
 import GalleryGrid from '@/components/gallery/GalleryGrid';
 import ReviewsSection from '@/components/social/ReviewsSection';
 

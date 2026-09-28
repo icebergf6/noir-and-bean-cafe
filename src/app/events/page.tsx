@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Calendar, Users, Clock, CheckCircle2, ArrowRight, Sparkles, MessageCircle } from 'lucide-react';
+import { Users, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface EventItem {
   id: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, MessageCircle, MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { ArrowUpRight, MessageCircle, MapPin, Clock, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (

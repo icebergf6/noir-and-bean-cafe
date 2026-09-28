@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Plus, Minus, Check, Flame, Clock, ShieldAlert } from 'lucide-react';
+import { ArrowLeft, Plus, Minus, Check, Flame, Clock } from 'lucide-react';
 import { PRODUCTS, formatPrice } from '@/data/products';
 import { useCart } from '@/context/CartContext';
 import { SelectedCustomization } from '@/types/product';
@@ -209,6 +209,46 @@ export default function ProductDetailPage() {
                     </div>
                   </div>
                 )}
+
+                {/* Ice / Temperature */}
+                {product.customization.ice && (
+                  <div>
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-[#1A1412] mb-1.5">
+                      Ice / Temperature
+                    </span>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      {product.customization.ice.map((opt) => (
+                        <button
+                          key={opt}
+                          type="button"
+                          onClick={() => setSelectedIce(opt)}
+                          className={`p-2 text-xs font-semibold rounded border transition-all text-center ${
+                            selectedIce === opt
+                              ? 'border-[#1A1412] bg-[#1A1412] text-[#F9F6F0]'
+                              : 'border-[#E5DDD0] bg-white text-[#1A1412]'
+                          }`}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Special Instructions */}
+                <div>
+                  <span className="block text-[11px] font-bold uppercase tracking-wider text-[#1A1412] mb-1.5">
+                    Special Instructions
+                  </span>
+                  <input
+                    type="text"
+                    value={notes}
+                    onChange={(e) => setNotes(e.target.value)}
+                    placeholder="e.g. Extra hot, separate whip, or allergies..."
+                    className="w-full text-xs p-3 bg-white border border-[#E5DDD0] rounded focus:outline-none focus:border-[#1A1412]"
+                    maxLength={100}
+                  />
+                </div>
               </div>
             )}
           </div>

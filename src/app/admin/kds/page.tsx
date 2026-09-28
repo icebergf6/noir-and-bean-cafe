@@ -4,21 +4,14 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   ChefHat,
-  Coffee,
   Clock,
   Printer,
   CheckCircle2,
-  AlertCircle,
   Plus,
   Volume2,
   VolumeX,
-  ArrowLeft,
-  RefreshCw,
-  ExternalLink,
-  Sliders,
-  Utensils
+  ArrowLeft
 } from 'lucide-react';
-import { formatPrice } from '@/data/products';
 
 export interface KdTicketItem {
   name: string;

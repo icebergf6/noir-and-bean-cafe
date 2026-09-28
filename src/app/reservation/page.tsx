@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
   Calendar as CalendarIcon,
   Clock,
@@ -12,8 +11,7 @@ import {
   Compass,
   MessageCircle,
   AlertTriangle,
-  ArrowRight,
-  ShieldCheck
+  ArrowRight
 } from 'lucide-react';
 import { SeatingArea, ReservationBooking, TimeSlotOption } from '@/types/reservation';
 import TableFloorplan, { FloorplanTable } from '@/components/reservation/TableFloorplan';

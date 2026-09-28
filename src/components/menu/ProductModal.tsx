@@ -5,11 +5,15 @@ import Image from 'next/image';
 import { X, Plus, Minus, Check, Clock, Flame, ShieldAlert } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { formatPrice } from '@/data/products';
-import { SelectedCustomization } from '@/types/product';
+import { Product, SelectedCustomization } from '@/types/product';
 
-export default function ProductModal() {
-  const { activeProductModal, setActiveProductModal, addToCart } = useCart();
+interface ProductModalContentProps {
+  product: Product;
+  onClose: () => void;
+  onAddToCart: (product: Product, quantity: number, custom: SelectedCustomization) => void;
+}
 
+function ProductModalContent({ product, onClose, onAddToCart }: ProductModalContentProps) {
   const [quantity, setQuantity] = useState(1);
   const [selectedMilk, setSelectedMilk] = useState<string>('Full Cream');
   const [selectedSugar, setSelectedSugar] = useState<string>('Normal Sugar');
@@ -17,21 +21,14 @@ export default function ProductModal() {
   const [selectedSize, setSelectedSize] = useState<string>('Regular');
   const [notes, setNotes] = useState('');
 
-  // Reset defaults whenever modal product opens
+  // Close modal on Escape key
   useEffect(() => {
-    if (activeProductModal) {
-      setQuantity(1);
-      setSelectedMilk('Full Cream');
-      setSelectedSugar('Normal Sugar');
-      setSelectedIce('Normal Ice');
-      setSelectedSize('Regular');
-      setNotes('');
-    }
-  }, [activeProductModal]);
-
-  if (!activeProductModal) return null;
-
-  const product = activeProductModal;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
 
   // Calculate live item price including selected addons
   let currentUnitPrice = product.price;
@@ -47,19 +44,24 @@ export default function ProductModal() {
       ...(product.customization?.size ? { size: selectedSize } : {}),
       notes: notes.trim()
     };
-    addToCart(product, quantity, custom);
-    setActiveProductModal(null);
+    onAddToCart(product, quantity, custom);
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-modal-title"
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
+      onClick={onClose}
+    >
       <div
         className="relative w-full max-w-2xl bg-[#F9F6F0] rounded-xl shadow-2xl border border-[#E5DDD0] overflow-hidden flex flex-col max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
-          onClick={() => setActiveProductModal(null)}
+          onClick={onClose}
           aria-label="Close dialog"
           className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#1A1412] flex items-center justify-center shadow-md transition-all"
         >
@@ -101,7 +103,7 @@ export default function ProductModal() {
                   </span>
                 ))}
               </div>
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1A1412]">
+              <h2 id="product-modal-title" className="font-serif text-2xl sm:text-3xl font-bold text-[#1A1412]">
                 {product.name}
               </h2>
               <p className="text-xl font-bold text-[#C48B56] mt-1">
@@ -295,5 +297,23 @@ export default function ProductModal() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ProductModal() {
+  const { activeProductModal, setActiveProductModal, addToCart } = useCart();
+
+  if (!activeProductModal) return null;
+
+  return (
+    <ProductModalContent
+      key={activeProductModal.id}
+      product={activeProductModal}
+      onClose={() => setActiveProductModal(null)}
+      onAddToCart={(product, quantity, custom) => {
+        addToCart(product, quantity, custom);
+        setActiveProductModal(null);
+      }}
+    />
   );
 }

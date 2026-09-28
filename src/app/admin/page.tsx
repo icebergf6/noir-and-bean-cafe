@@ -5,28 +5,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   TrendingUp,
-  ShoppingBag,
   Calendar,
-  Users,
   Coffee,
   CheckCircle2,
-  Clock,
   ArrowUpRight,
   ArrowLeft,
   Search,
-  Filter,
-  RefreshCw,
   Plus,
   Edit2,
   Copy,
-  Trash2,
-  ChevronRight,
   BarChart3,
   Tag,
-  AlertCircle,
-  Eye,
-  Check,
-  X,
   ChefHat
 } from 'lucide-react';
 import {
