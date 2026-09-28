@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { MapPin, Clock, Phone, MessageCircle, Mail, Compass, ExternalLink, Calendar } from 'lucide-react';
+import { MapPin, Clock, Phone, MessageCircle, Mail, Calendar, ExternalLink } from 'lucide-react';
+import InteractiveMap from '@/components/common/InteractiveMap';
 
 export default function ContactPage() {
   return (
@@ -95,46 +96,46 @@ export default function ContactPage() {
 
         </div>
 
-        {/* Map Visualization Card */}
-        <div className="lg:col-span-7 bg-[#1A1412] text-white rounded-3xl overflow-hidden shadow-xl border border-[#2D2420] flex flex-col justify-between p-8 sm:p-12 min-h-[460px] relative">
-          {/* Subtle Grid Map Aesthetics */}
-          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#C48B56_1px,transparent_1px)] [background-size:20px_20px]" />
-          
-          <div className="relative z-10 space-y-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/10 rounded-full text-[#C48B56] inline-block">
-              GEOGRAPHIC COORDINATES
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold leading-tight">
-              NOIR & BEAN <br />
-              <span className="text-[#C48B56]">KARAWANG SANCTUARY</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-[#A89F91] max-w-md leading-relaxed">
-              Located 5 minutes from Karawang Central Plaza, directly accessible from Tol Karawang Barat Exit.
-            </p>
-          </div>
+        {/* Interactive Google Map */}
+        <div className="lg:col-span-7">
+          <InteractiveMap showDetailsCard={false} />
+        </div>
+      </div>
 
-          <div className="relative z-10 pt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3.5 bg-[#C48B56] hover:bg-[#AF7744] text-[#1A1412] text-xs font-bold tracking-widest uppercase rounded flex items-center gap-2 transition-colors"
-            >
-              <Compass size={16} />
-              <span>NAVIGATE VIA GOOGLE MAPS</span>
-            </a>
-
-            <Link
-              href="/reservation"
-              className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-widest uppercase rounded flex items-center gap-2 transition-colors"
-            >
-              <Calendar size={16} />
-              <span>RESERVE TABLE</span>
-            </Link>
-          </div>
+      {/* Direct Navigation & Reservation Action Banner */}
+      <div className="bg-[#1A1412] text-white rounded-3xl overflow-hidden shadow-xl border border-[#2D2420] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 relative">
+        <div className="space-y-2 max-w-xl">
+          <span className="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/10 rounded-full text-[#C48B56] inline-block">
+            GEOGRAPHIC SANCTUARY
+          </span>
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold">
+            NOIR & BEAN KARAWANG
+          </h2>
+          <p className="text-xs sm:text-sm text-[#A89F91]">
+            Hanya 5 menit dari Mall Karawang Central Plaza (KCP) & Exit Tol Karawang Barat. Kunjungi kami untuk ngopi santai atau produktif.
+          </p>
         </div>
 
+        <div className="flex flex-wrap items-center gap-3">
+          <Link
+            href="/reservation"
+            className="px-6 py-3.5 bg-[#C48B56] hover:bg-[#AF7744] text-[#1A1412] text-xs font-bold tracking-widest uppercase rounded flex items-center gap-2 transition-all active:scale-95 shadow-md"
+          >
+            <Calendar size={16} />
+            <span>RESERVE TABLE</span>
+          </Link>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noreferrer"
+            className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-widest uppercase rounded flex items-center gap-2 transition-all active:scale-95"
+          >
+            <MessageCircle size={16} />
+            <span>WHATSAPP CONCIERGE</span>
+          </a>
+        </div>
       </div>
+
     </div>
   );
 }
