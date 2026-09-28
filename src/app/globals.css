@@ -56,6 +56,42 @@ body {
   background: #C48B56;
 }
 
+/* Fluid Micro-Interactions & Tactile Polish */
+.btn-tactile {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-tactile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(26, 20, 18, 0.18);
+}
+.btn-tactile:active {
+  transform: scale(0.97) translateY(0);
+}
+
+.interactive-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.interactive-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 35px -12px rgba(26, 20, 18, 0.12), 0 8px 16px -4px rgba(26, 20, 18, 0.06);
+}
+
+/* Shimmer animation for VIP badges */
+@keyframes shimmerGold {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-badge {
+  background: linear-gradient(90deg, rgba(196,139,86,0.15) 0%, rgba(196,139,86,0.35) 50%, rgba(196,139,86,0.15) 100%);
+  background-size: 200% 100%;
+  animation: shimmerGold 3s infinite;
+}
+
 /* Dusk & Evening Jazz Mode */
 html.dusk-atmosphere-active {
   --bg-primary: #120D0C;
@@ -78,3 +114,11 @@ html.dusk-atmosphere-active .bg-white {
   border-color: #2E2320 !important;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

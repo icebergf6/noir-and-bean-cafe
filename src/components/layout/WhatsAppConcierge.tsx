@@ -83,13 +83,13 @@ export default function WhatsAppConcierge() {
                     <button
                       key={q.label}
                       onClick={() => handleSend(q.text)}
-                      className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-left transition-all flex items-center justify-between group"
+                      className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 hover:border-[#C48B56]/40 border border-white/10 text-left transition-all duration-200 active:scale-[0.98] flex items-center justify-between group"
                     >
                       <div className="flex items-center gap-2.5">
-                        <Icon size={14} className="text-[#C48B56]" />
+                        <Icon size={14} className="text-[#C48B56] group-hover:scale-110 transition-transform" />
                         <span className="text-xs font-semibold text-white group-hover:text-[#C48B56] transition-colors">{q.label}</span>
                       </div>
-                      <ChevronRight size={14} className="text-[#A89F91] group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight size={14} className="text-[#A89F91] group-hover:translate-x-1.5 transition-transform duration-200" />
                     </button>
                   );
                 })}
@@ -108,11 +108,11 @@ export default function WhatsAppConcierge() {
                   value={customMsg}
                   onChange={(e) => setCustomMsg(e.target.value)}
                   placeholder="Type a question..."
-                  className="flex-1 text-xs p-2.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#C48B56]"
+                  className="flex-1 text-xs p-2.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#C48B56] focus:ring-1 focus:ring-[#C48B56]"
                 />
                 <button
                   type="submit"
-                  className="p-2.5 bg-[#C48B56] hover:bg-[#AF7744] text-[#1A1412] rounded-xl transition-colors font-bold"
+                  className="p-2.5 bg-[#C48B56] hover:bg-[#AF7744] active:scale-90 text-[#1A1412] rounded-xl transition-all font-bold"
                   aria-label="Send WhatsApp"
                 >
                   <Send size={15} />

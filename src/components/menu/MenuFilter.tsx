@@ -31,10 +31,10 @@ export default function MenuFilter({
             <button
               key={cat}
               onClick={() => onSelectCategory(cat as ProductCategory)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shrink-0 transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shrink-0 transition-all duration-200 active:scale-95 hover:-translate-y-0.5 ${
                 isSelected
-                  ? 'bg-[#1A1412] text-[#F9F6F0] shadow-md'
-                  : 'bg-white border border-[#E5DDD0] text-[#7A726D] hover:text-[#1A1412] hover:border-[#1A1412]'
+                  ? 'bg-[#1A1412] text-[#F9F6F0] shadow-md ring-2 ring-[#C48B56]/30'
+                  : 'bg-white border border-[#E5DDD0] text-[#7A726D] hover:text-[#1A1412] hover:border-[#1A1412] shadow-sm'
               }`}
             >
               {cat}
@@ -55,10 +55,10 @@ export default function MenuFilter({
               <button
                 key={tag}
                 onClick={() => onToggleDietary(tag as DietaryTag)}
-                className={`px-3 py-1 text-[10px] font-bold tracking-wider uppercase rounded border transition-colors ${
+                className={`px-3 py-1 text-[10px] font-bold tracking-wider uppercase rounded-full border transition-all duration-200 active:scale-90 ${
                   isTagActive
-                    ? 'bg-[#C48B56] text-[#1A1412] border-[#C48B56]'
-                    : 'bg-white/80 border-[#E5DDD0] text-[#7A726D] hover:border-[#1A1412]'
+                    ? 'bg-[#C48B56] text-[#1A1412] border-[#C48B56] font-black shadow-sm'
+                    : 'bg-white/80 border-[#E5DDD0] text-[#7A726D] hover:border-[#1A1412] hover:text-[#1A1412]'
                 }`}
               >
                 {tag}
@@ -70,7 +70,7 @@ export default function MenuFilter({
         {hasActiveFilters && (
           <button
             onClick={onResetFilters}
-            className="text-[11px] text-[#A33B32] hover:underline font-semibold tracking-wider uppercase"
+            className="text-[11px] text-[#A33B32] hover:underline font-semibold tracking-wider uppercase active:scale-95 transition-all"
           >
             Clear Filters
           </button>

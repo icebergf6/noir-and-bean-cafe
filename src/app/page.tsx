@@ -58,23 +58,23 @@ export default function HomePage() {
             {/* CTAs */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link
-                href="/menu"
-                className="px-8 py-4 bg-[#C48B56] hover:bg-[#AF7744] text-[#1A1412] text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-lg hover:shadow-2xl flex items-center gap-2 group"
+                href="/order"
+                className="px-8 py-4 bg-[#C48B56] hover:bg-[#AF7744] active:scale-95 text-[#1A1412] text-xs font-bold tracking-[0.2em] uppercase transition-all duration-200 shadow-lg hover:shadow-2xl hover:-translate-y-0.5 flex items-center gap-2 group"
               >
                 <span>ORDER NOW</span>
-                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={15} className="group-hover:translate-x-1.5 transition-transform duration-200" />
               </Link>
 
               <Link
                 href="/menu"
-                className="px-8 py-4 bg-white/10 hover:bg-white text-white hover:text-[#1A1412] border border-white/20 text-xs font-bold tracking-[0.2em] uppercase transition-all backdrop-blur-sm"
+                className="px-8 py-4 bg-white/10 hover:bg-white text-white hover:text-[#1A1412] active:scale-95 border border-white/20 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
               >
                 VIEW MENU
               </Link>
 
               <Link
                 href="/reservation"
-                className="px-6 py-4 text-xs font-bold tracking-[0.2em] uppercase text-[#F9F6F0] hover:text-[#C48B56] transition-colors underline underline-offset-8"
+                className="px-6 py-4 text-xs font-bold tracking-[0.2em] uppercase text-[#F9F6F0] hover:text-[#C48B56] active:scale-95 transition-all duration-200 underline underline-offset-8"
               >
                 RESERVE A TABLE
               </Link>
@@ -163,38 +163,38 @@ export default function HomePage() {
             {/* Right Pillars Cards */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
               
-              <div className="bg-[#241C19] p-6 rounded-lg border border-[#382E29] space-y-4">
-                <div className="w-12 h-12 rounded bg-[#C48B56]/10 text-[#C48B56] flex items-center justify-center">
+              <div className="bg-[#241C19] p-6 rounded-xl border border-[#382E29] hover:border-[#C48B56]/60 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-default space-y-4">
+                <div className="w-12 h-12 rounded-lg bg-[#C48B56]/10 text-[#C48B56] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C48B56] group-hover:text-[#1A1412] transition-all duration-300">
                   <Coffee size={24} />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-white">
+                <h3 className="font-serif text-lg font-bold text-white group-hover:text-[#C48B56] transition-colors">
                   01. Direct Sourcing
                 </h3>
-                <p className="text-xs text-[#A89F91] leading-relaxed">
+                <p className="text-xs text-[#A89F91] leading-relaxed font-light">
                   Single-origin lots sourced directly from smallholder estates across Aceh Gayo, Toraja, and Yirgacheffe.
                 </p>
               </div>
 
-              <div className="bg-[#241C19] p-6 rounded-lg border border-[#382E29] space-y-4">
-                <div className="w-12 h-12 rounded bg-[#C48B56]/10 text-[#C48B56] flex items-center justify-center">
+              <div className="bg-[#241C19] p-6 rounded-xl border border-[#382E29] hover:border-[#C48B56]/60 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-default space-y-4">
+                <div className="w-12 h-12 rounded-lg bg-[#C48B56]/10 text-[#C48B56] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C48B56] group-hover:text-[#1A1412] transition-all duration-300">
                   <Sparkles size={24} />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-white">
+                <h3 className="font-serif text-lg font-bold text-white group-hover:text-[#C48B56] transition-colors">
                   02. Daily Bakehouse
                 </h3>
-                <p className="text-xs text-[#A89F91] leading-relaxed">
+                <p className="text-xs text-[#A89F91] leading-relaxed font-light">
                   Croissants, tarts, and molten Basque cheesecakes hand-baked twice each day at 07:30 and 13:00.
                 </p>
               </div>
 
-              <div className="bg-[#241C19] p-6 rounded-lg border border-[#382E29] space-y-4">
-                <div className="w-12 h-12 rounded bg-[#C48B56]/10 text-[#C48B56] flex items-center justify-center">
+              <div className="bg-[#241C19] p-6 rounded-xl border border-[#382E29] hover:border-[#C48B56]/60 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-default space-y-4">
+                <div className="w-12 h-12 rounded-lg bg-[#C48B56]/10 text-[#C48B56] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C48B56] group-hover:text-[#1A1412] transition-all duration-300">
                   <Heart size={24} />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-white">
+                <h3 className="font-serif text-lg font-bold text-white group-hover:text-[#C48B56] transition-colors">
                   03. Dedicated Space
                 </h3>
-                <p className="text-xs text-[#A89F91] leading-relaxed">
+                <p className="text-xs text-[#A89F91] leading-relaxed font-light">
                   Acoustic baffling, high-speed fiber internet, private meeting booths, and warm 2700K ambient illumination.
                 </p>
               </div>
@@ -245,7 +245,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href="/reservation"
-                className="px-6 py-3.5 bg-[#1A1412] hover:bg-[#C48B56] text-[#F9F6F0] text-xs font-bold tracking-widest uppercase transition-colors"
+                className="px-6 py-3.5 bg-[#1A1412] hover:bg-[#C48B56] active:scale-95 text-[#F9F6F0] text-xs font-bold tracking-widest uppercase transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 RESERVE A TABLE
               </Link>
@@ -253,7 +253,7 @@ export default function HomePage() {
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-3.5 border border-[#1A1412] text-[#1A1412] hover:bg-[#F2EDE4] text-xs font-bold tracking-widest uppercase transition-colors"
+                className="px-6 py-3.5 border border-[#1A1412] text-[#1A1412] hover:bg-[#F2EDE4] active:scale-95 text-xs font-bold tracking-widest uppercase transition-all duration-200"
               >
                 GET DIRECTIONS
               </a>
@@ -261,12 +261,12 @@ export default function HomePage() {
           </div>
 
           {/* Right Photographic Visual */}
-          <div className="relative min-h-[300px] lg:min-h-full bg-[#E5DDD0]">
+          <div className="relative min-h-[300px] lg:min-h-full bg-[#E5DDD0] overflow-hidden group">
             <Image
               src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop"
               alt="Warm Café Seating in Karawang"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

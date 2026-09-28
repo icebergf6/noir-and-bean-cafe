@@ -204,10 +204,10 @@ export default function ReservationPage() {
                   key={d.full}
                   type="button"
                   onClick={() => setSelectedDate(d.full)}
-                  className={`p-3 rounded-xl border text-center transition-all ${
+                  className={`p-3 rounded-xl border text-center transition-all duration-200 active:scale-95 hover:-translate-y-0.5 ${
                     selectedDate === d.full
-                      ? 'bg-[#1A1412] text-white border-[#1A1412] shadow-md'
-                      : 'bg-[#F9F6F0] text-[#1A1412] border-[#E5DDD0] hover:border-[#1A1412]/40'
+                      ? 'bg-[#1A1412] text-white border-[#1A1412] shadow-md ring-2 ring-[#C48B56]/30'
+                      : 'bg-[#F9F6F0] text-[#1A1412] border-[#E5DDD0] hover:border-[#1A1412]/40 shadow-sm'
                   }`}
                 >
                   <p className="text-xs font-bold">{d.label}</p>
@@ -238,12 +238,12 @@ export default function ReservationPage() {
                     type="button"
                     disabled={!slot.isAvailable}
                     onClick={() => setSelectedTime(slot.time)}
-                    className={`p-3 rounded-xl border text-left transition-all ${
+                    className={`p-3 rounded-xl border text-left transition-all duration-200 ${
                       !slot.isAvailable
                         ? 'opacity-40 bg-[#F2EDE4] border-[#E5DDD0] cursor-not-allowed'
                         : isSelected
-                        ? 'bg-[#1A1412] text-white border-[#1A1412] shadow-md'
-                        : 'bg-white text-[#1A1412] border-[#E5DDD0] hover:border-[#1A1412]/40'
+                        ? 'bg-[#1A1412] text-white border-[#1A1412] shadow-md ring-2 ring-[#C48B56]/30 active:scale-95'
+                        : 'bg-white text-[#1A1412] border-[#E5DDD0] hover:border-[#1A1412]/40 active:scale-95 hover:-translate-y-0.5 shadow-sm'
                     }`}
                   >
                     <div className="flex items-center justify-between">
@@ -371,10 +371,10 @@ export default function ReservationPage() {
             <span className="text-xs text-[#7A726D]">Zero deposit required for parties under 8 guests.</span>
             <button
               type="submit"
-              className="px-8 py-4 bg-[#1A1412] hover:bg-[#C48B56] text-[#F9F6F0] font-bold text-xs tracking-widest uppercase transition-colors shadow-lg flex items-center gap-2"
+              className="px-8 py-4 bg-[#1A1412] hover:bg-[#C48B56] active:scale-95 text-[#F9F6F0] font-bold text-xs tracking-widest uppercase transition-all duration-200 shadow-lg hover:shadow-2xl hover:-translate-y-0.5 flex items-center gap-2 group"
             >
               <span>CONFIRM RESERVATION</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={15} className="group-hover:translate-x-1.5 transition-transform duration-200" />
             </button>
           </div>
         </form>

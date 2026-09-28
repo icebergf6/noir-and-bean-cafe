@@ -453,10 +453,10 @@ export default function OrderPage() {
 
                   <button
                     onClick={() => setStep(2)}
-                    className="w-full py-4 bg-[#1A1412] hover:bg-[#C48B56] text-[#F9F6F0] font-bold text-xs tracking-widest uppercase transition-colors flex items-center justify-center gap-2 group shadow-md"
+                    className="w-full py-4 bg-[#1A1412] hover:bg-[#C48B56] active:scale-95 text-[#F9F6F0] font-bold text-xs tracking-widest uppercase transition-all duration-200 flex items-center justify-center gap-2 group shadow-md hover:shadow-xl hover:-translate-y-0.5"
                   >
                     <span>PROCEED TO DETAILS</span>
-                    <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={15} className="group-hover:translate-x-1.5 transition-transform duration-200" />
                   </button>
                 </div>
               </div>
@@ -699,10 +699,10 @@ export default function OrderPage() {
 
             <button
               onClick={handleValidateStep2}
-              className="px-8 py-3.5 bg-[#1A1412] hover:bg-[#C48B56] text-[#F9F6F0] font-bold text-xs tracking-widest uppercase transition-colors flex items-center gap-2"
+              className="px-8 py-3.5 bg-[#1A1412] hover:bg-[#C48B56] active:scale-95 text-[#F9F6F0] font-bold text-xs tracking-widest uppercase transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 group"
             >
               <span>CONTINUE TO PAYMENT</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={15} className="group-hover:translate-x-1.5 transition-transform duration-200" />
             </button>
           </div>
         </div>
@@ -740,10 +740,10 @@ export default function OrderPage() {
                   key={p.id}
                   type="button"
                   onClick={() => setPaymentMethod(p.id)}
-                  className={`p-4 rounded-xl border text-center flex flex-col items-center justify-center gap-2 transition-all ${
+                  className={`p-4 rounded-xl border text-center flex flex-col items-center justify-center gap-2 transition-all duration-200 active:scale-95 hover:-translate-y-0.5 ${
                     isSelected
-                      ? 'border-[#1A1412] bg-[#1A1412] text-white shadow-md'
-                      : 'border-[#E5DDD0] bg-[#F9F6F0] text-[#1A1412] hover:border-[#1A1412]/40'
+                      ? 'border-[#1A1412] bg-[#1A1412] text-white shadow-lg ring-2 ring-[#C48B56]/30'
+                      : 'border-[#E5DDD0] bg-[#F9F6F0] text-[#1A1412] hover:border-[#1A1412]/40 shadow-sm hover:shadow'
                   }`}
                 >
                   <Icon size={22} className={isSelected ? 'text-[#C48B56]' : 'text-[#7A726D]'} />
@@ -827,9 +827,9 @@ export default function OrderPage() {
 
             <button
               onClick={handleConfirmOrder}
-              className="px-8 py-4 bg-[#C48B56] hover:bg-[#AF7744] text-[#1A1412] font-bold text-xs tracking-widest uppercase transition-all shadow-lg flex items-center gap-2"
+              className="px-8 py-4 bg-[#C48B56] hover:bg-[#AF7744] active:scale-95 text-[#1A1412] font-bold text-xs tracking-widest uppercase transition-all duration-200 shadow-lg hover:shadow-2xl hover:-translate-y-0.5 flex items-center gap-2 group"
             >
-              <CheckCircle2 size={16} />
+              <CheckCircle2 size={16} className="group-hover:scale-110 transition-transform" />
               <span>CONFIRM & PLACE ORDER ({formatPrice(finalTotal)})</span>
             </button>
           </div>
