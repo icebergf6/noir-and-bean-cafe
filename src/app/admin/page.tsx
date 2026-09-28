@@ -248,6 +248,38 @@ export default function AdminPage() {
               </h2>
             </div>
 
+            {/* Live KDS Expeditor Hub Banner */}
+            <div className="bg-[#1A1412] text-white p-6 rounded-2xl border border-[#382E29] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#C48B56] text-[#1A1412] flex items-center justify-center font-bold shadow-md shadow-[#C48B56]/20 shrink-0">
+                  <ChefHat size={26} />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-serif text-lg font-bold">Kitchen Display System (KDS 2.0) Active</h3>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      LIVE EXPEDITOR
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#A89F91]">
+                    Monitor antrean seduhan barista Slayer, pesanan hot kitchen, bakehouse viennoiserie, dan cetak slip kasir ESC-POS thermal secara real-time.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 shrink-0">
+                <Link
+                  href="/admin/kds"
+                  target="_blank"
+                  className="px-5 py-3 bg-[#C48B56] hover:bg-[#AF7744] text-[#1A1412] text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2"
+                >
+                  <span>Buka Layar Tablet KDS</span>
+                  <ArrowUpRight size={15} />
+                </Link>
+              </div>
+            </div>
+
             {/* 4 KPI Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {ADMIN_KPIS.map((kpi) => (

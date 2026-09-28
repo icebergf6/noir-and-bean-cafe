@@ -1016,6 +1016,17 @@ export default function OrderPage() {
               NEW ORDER
             </button>
           </div>
+
+          <div className="pt-3 text-center border-t border-[#E5DDD0]">
+            <Link
+              href="/admin/kds"
+              target="_blank"
+              className="inline-flex items-center gap-1.5 text-xs text-[#7A726D] hover:text-[#C48B56] font-semibold transition-colors"
+            >
+              <ChefHat size={14} className="text-[#C48B56]" />
+              <span>Buka Layar Kitchen & Barista Display (KDS Monitor) ➔</span>
+            </Link>
+          </div>
         </div>
       )}
     </div>
